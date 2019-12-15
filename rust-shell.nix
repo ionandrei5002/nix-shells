@@ -3,17 +3,17 @@ let
 	nixpkgs = import <nixpkgs> { overlays = [ moz_overlay ]; };
 in
 	with nixpkgs;
-	stdenv.mkDerivation {
-		name = "moz_overlay_shell";
-		buildInputs = [
-			nixpkgs.latest.rustChannels.stable.rust
-			rustracer
-			rustfmt
-			rustPlatform.rustcSrc
-			rls
-			cargo
-			pkgconfig
-		];
-		RUST_BACKTRACE 	= 1;
-		RUST_SRC_PATH 	= "${latest.rustChannels.stable.rust-src}/lib/rustlib/src/rust/src";
-	}
+stdenv.mkDerivation {
+	name = "rust-env";
+	buildInputs = [
+		nixpkgs.latest.rustChannels.stable.rust
+		rustracer
+		rustfmt
+		rustPlatform.rustcSrc
+		rls
+		cargo
+		pkgconfig
+	];
+	RUST_BACKTRACE 	= 1;
+	RUST_SRC_PATH 	= "${latest.rustChannels.stable.rust-src}/lib/rustlib/src/rust/src";
+}

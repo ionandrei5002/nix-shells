@@ -2,7 +2,7 @@ with import <nixpkgs-unstable> {};
 
 stdenv.mkDerivation {
 	name = "java-env";
-	nativeBuildInputs = [
+	buildInputs = [
 		openjdk
 		maven
 	];
