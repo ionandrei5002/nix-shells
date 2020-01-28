@@ -17,6 +17,8 @@ stdenv.mkDerivation rec {
     rustPlatform.rustcSrc
     rls
     cargo
+    openjdk
+    maven
     pkgconfig
     (
       nixpkgs.python3.buildEnv.override rec {
@@ -26,6 +28,13 @@ stdenv.mkDerivation rec {
       }
     )
   ];
+
+  buildCommand = ''
+    which java
+    echo "JAVA_HOME=$JAVA_HOME"
+    exit 1
+  '';
+
   RUST_BACKTRACE  = 1;
   RUST_SRC_PATH   = "${latest.rustChannels.stable.rust-src}/lib/rustlib/src/rust/src";
 }
