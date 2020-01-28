@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs-unstable> {} }:
 with pkgs;
 
 let 
@@ -48,7 +48,7 @@ pkgs.stdenv.mkDerivation rec {
     luaPackages.luv
     msgpack
     ncurses
-    neovimLuaEnv
+#    neovimLuaEnv
     unibilium
     jemalloc
     libiconv
