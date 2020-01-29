@@ -3,7 +3,7 @@ let
   nixpkgs = import <nixpkgs> { overlays = [ moz_overlay ]; };
 in
   with nixpkgs;
-  
+
 stdenv.mkDerivation rec {
   name = "neovim-shell";
   buildInputs = [
