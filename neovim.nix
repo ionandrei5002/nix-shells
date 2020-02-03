@@ -11,7 +11,7 @@ pkgs.stdenv.mkDerivation {
   name = "neovim-latest";
   src = pkgs.fetchurl {
     url = "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz";
-    sha256 = "12w6gsmhzsy787rh9xvf5a54l5bp6572a2azx93dm46bn45yr0qk";
+    sha256 = "07970qiqfzfgqilk3wmxi96vc4mvjykjkdwdjwjzn82n6vgqq34q";
   };
 
   unpackPhase = "true";
